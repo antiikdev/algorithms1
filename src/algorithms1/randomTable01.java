@@ -37,6 +37,12 @@ public class randomTable01 {
 	/**
 	 * Search how many numbers from integer array
 	 * can be found from a certain range.
+	 * Algorithm processing time evaluation - linear:
+	 * T(n) = n * t1 + t2
+	 * where:
+	 * n = array.length
+	 * t1 = one iteration inside of the loop 
+	 * t2 = process outside of the loop, e.g. initialiaztion of int found
 	 * @param array integer that is searched
 	 * @param min of range
 	 * @param max of range
