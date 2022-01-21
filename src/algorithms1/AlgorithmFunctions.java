@@ -1,5 +1,6 @@
 /**
- * Small algorithms with evaluations
+ * Small algorithms with evalutions
+ * 
  */
 package algorithms1;
 
