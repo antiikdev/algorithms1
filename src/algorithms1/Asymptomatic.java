@@ -11,11 +11,11 @@ package algorithms1;
  */
 public class Asymptomatic {
 
-	private static final int MAXVALUE = 1000000;
+	// private static final int MAXVALUE = 1000000;
 	
 	
 	/**
-	 * TODO: calculate 
+	 * TODO: calculate NOT FINISHED, issue: double numbers
 	 * @param m1
 	 * @param p1
 	 * @param m2
