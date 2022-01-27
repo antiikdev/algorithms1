@@ -2,14 +2,14 @@
  * Program calculates how many times numbers from a specified range
  * can be found from an array with random integer numbers.
  */
-package algorithms1;
+package algos01;
 
 import java.util.Random;
 
 /**
  * Random integer table numbers
  * @author Antiikdev
- * @version 20. Dec 2022
+ * @version 20. Jan 2022
  */
 public class RandomArrayO1 {
 	

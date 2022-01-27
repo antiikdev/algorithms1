@@ -1,7 +1,7 @@
 /**
  * NOT FINISHED! Calculates polynomial functions
  */
-package algorithms1;
+package algos01;
 
 /**
  * @author Antiikdev

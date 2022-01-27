@@ -2,7 +2,7 @@
  * Small algorithms with evalutions
  * 
  */
-package algorithms1;
+package algos01;
 
 import java.util.Arrays;
 
