@@ -29,14 +29,12 @@ public class Recursion {
 	public static int findSmallest(int[] t, int n, int smallest) {
 		if (n < 0) return smallest;
 		if (t[n] < smallest) smallest = t[n];
-		n--;
-		smallest = findSmallest(t, n, smallest);
-		return smallest;
+		return findSmallest(t, n-1, smallest);
 	}
 	
 	
 	/**
-	 * Set's a given number to all array's indexses
+	 * Sets a given number to all array's indexses
 	 * @param t array
 	 * @param n length of array
 	 * @param number input to an array
@@ -45,8 +43,31 @@ public class Recursion {
 	public static int[] setNumber(int[] t, int n, int number) {
 		if ( n < 0 ) return t;
 		t[n] = number;
-		setNumber(t, --n, number);
-		return t;
+		return setNumber(t, --n, number);
+	}
+	
+	
+	/**
+	 * Count number of zeroes in an array
+	 * @param t array
+	 * @param n length of array
+	 * @param sum of zeroes
+	 * @return sum of zeroes in an array
+	 * @example
+	 * <pre name="test">
+	 * 	int[] t1 = { 1, 0, 3 };
+	 * 	int n = t1.length-1, sum = 0;
+	 * 	countZeroes(t1, n, sum) === 1;
+	 * 	int[] t2 = { 4, 0, 0 }; n = t2.length-1; sum = 0;
+	 * 	countZeroes(t2, n, sum) === 2;
+	 * </pre>
+	 */
+	public static int countZeroes(int[] t, int n, int sum) {
+		if ( n < 0 ) return sum;
+		if ( t[n] == 0 ) {
+			return countZeroes(t, n-1, ++sum);
+		}
+		return countZeroes(t, n-1, sum);
 	}
 	
 
@@ -66,9 +87,11 @@ public class Recursion {
 		// b) Set number to array indexses
 		t = setNumber(t, n, number);
 		System.out.println(Arrays.toString(t));
-		System.out.println("Array indexses filled with number " + number);
+		System.out.println("Array indexses filled with number " + number + "\n");
 		
-		
+		// c) Count zeroes
+		int sum = 0;
+		System.out.println("Array has " + countZeroes(t, n, sum) + " zero(es)\n");
 	}
 
 }
