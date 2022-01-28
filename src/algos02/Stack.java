@@ -134,12 +134,14 @@ public class Stack {
 	
 
 	/**
+	 * Main for testing
 	 * @param args not in use
 	 */
 	public static void main(String[] args) {
 		
 		// Operate: remove two values (variables, finn. alkio) and
 		// replace with one new
+		// ----------------------------------------
 		System.out.println("Operate:");
 		Array a = new Array();
 		System.out.println(a.toString());
@@ -153,7 +155,9 @@ public class Stack {
 		a.push(sum);
 		System.out.println(a.toString());
 		
+		
 		// Sink: move stack's top value to first, other values go up in stack
+		// ----------------------------------------
 		System.out.println("Sink:");
 		Array b = new Array();
 		// Array from 1 to 4
@@ -178,8 +182,28 @@ public class Stack {
 			temp = c.pop();
 			d.push(temp);
 		}
-		
 		System.out.println(d.toString());
+		
+		
+		// Flips the stack upside down
+		// ----------------------------------------
+		System.out.println("Flip:");
+		Array e = new Array();
+		// Array from 1 to 4
+		for (int i = 1; i < 5; i++) {
+			e.push(i);
+		}
+		System.out.println(e.toString());
+		
+		Array f = new Array();
+		int temps = 0;
+		
+		while (e.size() > 0) {
+			temps = e.pop();
+			f.push(temps);
+		}
+		System.out.println(f.toString());
+		
 	}
 
 }
