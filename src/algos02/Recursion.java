@@ -1,5 +1,5 @@
 /**
- * 
+ * Recursion operations - Rekursio operaatiot (Finnish)
  */
 package algos02;
 
