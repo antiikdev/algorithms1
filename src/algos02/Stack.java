@@ -1,5 +1,5 @@
 /**
- * Stack operations - Pino operaatiot (Finnish)
+ * Stack and queue operations - (Finnish) Pino ja jono operaatiot 
  */
 package algos02;
 
