@@ -207,7 +207,7 @@ public class Stack {
 		
 		// STRING "DAGEBFICH": remove in alphabethical order using stacks
 		// ----------------------------------------
-		/* TODO: Array saving char values
+		/* TODO: Would require an array class that saves char values
 		System.out.println("String remove in alphabetical order");
 		String line = "DAGEBFICH";
 		Array one = new Array(), two = new Array(), three = new Array(), four = new Array();
@@ -240,9 +240,12 @@ public class Stack {
 		
 		// STRING "IDCBHGAFE": remove in alphabethical order using stacks
 		// ----------------------------------------
-		// Stacks#: one(), two(-), three(-E), d()
-		// 
-		
+		// String line2 = "IDCBHGAFE";
+		// Stacks#: one(-I,-H,-G,-F,-E), two(-D,-C,-B-A)
+		// I one.push(I), D two.push(D), C two.push(C), B two.push(B),
+		// H one.push(H), G one.push(G),
+		// A one.push(A), one.pop() A,B,C,D
+		// F one.push(F), E one.push(E), one.pop() E,F,G,H,I
 	}
 
 }
