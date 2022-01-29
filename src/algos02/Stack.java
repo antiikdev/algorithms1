@@ -134,7 +134,7 @@ public class Stack {
 	
 
 	/**
-	 * Main for testing
+	 * Main for testing the stack 
 	 * @param args not in use
 	 */
 	public static void main(String[] args) {
@@ -203,6 +203,45 @@ public class Stack {
 			f.push(temps);
 		}
 		System.out.println(f.toString());
+		
+		
+		// STRING "DAGEBFICH": remove in alphabethical order using stacks
+		// ----------------------------------------
+		/* TODO: Array saving char values
+		System.out.println("String remove in alphabetical order");
+		String line = "DAGEBFICH";
+		Array one = new Array(), two = new Array(), three = new Array(), four = new Array();
+		// Order: A(1), B(4), C(7), D(0), E(3), F(5), G(2), H(8), I(6)
+		// Stacks#: one(-D,-A,-B,-C), two(-G, -F), three(-E), d(-I)
+		
+		// D one.push(line), A one.push(line) one.pop(A), G two.push(line),
+		char D = line.charAt(0); one.push(D); // D
+		char A = line.charAt(1); one.push(A); one.pop(); // A
+		char G = line.charAt(2); two.push(G); // G
+		
+		// E three.push(line), B one.push(line) one.pop(B), F two.push(line),
+		char E = line.charAt(3); three.push(E); // E
+		char B = line.charAt(4); one.push(B); one.pop(); // B
+		char F = line.charAt(5); two.push(F); // F
+		
+		// I four.push(line), C one.push(line) one.pop(C), one.pop(D) three.pop(E)
+		char I = line.charAt(6); four.push(I); // I
+		char C = line.charAt(7); one.push(C); one.pop(); one.pop(); three.pop(); // C D E
+		
+		// two.pop(F) two.pop(G), H one.push(line) one.pop(H) d.pop(I)
+		two.pop(); two.pop();
+		char H = line.charAt(6); one.push(H); one.pop(); one.pop(); // H I
+		
+		System.out.println(one.toString());
+		System.out.println(two.toString());
+		System.out.println(three.toString());
+		System.out.println(four.toString());
+		*/
+		
+		// STRING "IDCBHGAFE": remove in alphabethical order using stacks
+		// ----------------------------------------
+		// Stacks#: one(), two(-), three(-E), d()
+		// 
 		
 	}
 
