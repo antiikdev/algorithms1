@@ -24,6 +24,7 @@ public class Stack {
 		private int n = 0;
 		private int[] array;
 		
+// -------- Array and queue functions --------
 		
 		/**
 		 * Initialize Array
@@ -91,6 +92,7 @@ public class Stack {
 			return this.array[n-1];
 		}
 		
+// ------------- OTHER functions -----------
 		
 		/**
 		 * Deletes all values from the stack's array
@@ -205,9 +207,11 @@ public class Stack {
 		System.out.println(f.toString());
 		
 		
+		// TODO: Following ones would require an array/queue class that saves char values
+		
 		// STRING "DAGEBFICH": remove in alphabethical order using stacks
 		// ----------------------------------------
-		/* TODO: Would require an array class that saves char values
+		/* 
 		System.out.println("String remove in alphabetical order");
 		String line = "DAGEBFICH";
 		Array one = new Array(), two = new Array(), three = new Array(), four = new Array();
@@ -238,6 +242,7 @@ public class Stack {
 		System.out.println(four.toString());
 		*/
 		
+		
 		// STRING "IDCBHGAFE": remove in alphabethical order using stacks
 		// ----------------------------------------
 		// String line2 = "IDCBHGAFE";
@@ -246,6 +251,42 @@ public class Stack {
 		// H one.push(H), G one.push(G),
 		// A one.push(A), one.pop() A,B,C,D
 		// F one.push(F), E one.push(E), one.pop() E,F,G,H,I
+		
+		
+		// QUEUE "DAGEBFICH": remove in alphabethical order using queue
+		// enqueue (add to end) and dequeue (remove beginning, return value) operations
+		// ----------------------------------------
+		/*
+		 * String line3 = "DAGEBFICH";
+		 * Queue#: one(-D,-G,-I), two(-A,-E,-F), three(-B,-C.-H)
+		 * D one.enqueue(D)
+		 * A two.enqueue(A) two.dequeue(A)
+		 * G one.enqueue(G)
+		 * E two.enqueue(E)
+		 * B three.enqueue(B), three.dequeue(B)
+		 * F two.enqueue(F)
+		 * I one.enqueue(I)
+		 * C three.enqueue(C), three.dequeue(C), one.d(D), two.d(E,F), one(G)
+		 * H three.enqueue(H), three,enqueue(H), one.D(I)
+		*/
+		
+		
+		// QUEUE "DAGEBFICH": remove in alphabethical order using queue
+		// enqueue (add to end) and dequeue (remove beginning, return value) operations
+		// ----------------------------------------
+		/*
+		 * String line4 = "IDCBHGAFE";
+		 * Queue#: one(-I), two(-D,-H), three(-C,-G), four(-B,-F), five(-A,-E)
+		 * I one.enqueue(I)
+		 * D two.enqueue(D)
+		 * C three.enqueue(C)
+		 * B four.enqueue(B)
+		 * H two.enqueue(H)
+		 * G three.enqueue(G)
+		 * A five.enqueue(A), five.dequeue(A), four.d(B), three.d(C), two.d(D)
+		 * F four.enqueue(F)
+		 * E five.enqueue(E), five.dequeue(E), four.d(F), three.d(G), two.d(H), one.d(I)
+		*/
 	}
 
 }
