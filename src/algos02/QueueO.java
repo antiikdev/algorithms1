@@ -19,8 +19,9 @@ public class QueueO {
 	 */
 	static class Array {
 		
-		private static final int MAXVALUES = 10;
-		private int n = 0;
+		private int QMAX = 10; // Max. number of values
+		private int f = 0; // first value index
+		private int b = 0; // index before the last value
 		private int[] array;
 		
 // -------- Array and queue functions --------
@@ -28,7 +29,7 @@ public class QueueO {
 		 * Initialize Array
 		 */
 		public Array() {
-			this.array = new int[MAXVALUES];
+			this.array = new int[QMAX];
 		}
 		
 		
@@ -38,6 +39,7 @@ public class QueueO {
 		 */
 		public Array(int size) {
 			this.array = new int[size];
+			this.QMAX = size;
 		}
 
 	
@@ -46,7 +48,7 @@ public class QueueO {
 	 * @return true if empty, false if not
 	 */
 	public boolean isEmpty() {
-		if ( this.n <= 0 ) return true;
+		if ( f == b ) return true;
 		return false;
 	}
 	
@@ -56,7 +58,7 @@ public class QueueO {
 	 * @return number of values in an array
 	 */
 	public int size() {
-		return this.n;
+		return this.array.length;
 	}
 	
 	
@@ -65,7 +67,11 @@ public class QueueO {
 	 * @param value that is added
 	 */
 	public void enqueue(int value) {
-		this.array[n] = value;
+		if ( this.b >= this.QMAX-1 ) return;
+		if ( b < QMAX-1) {
+			this.array[b++] = value;
+		} else b = 0;
+		
 	}
 	
 	
@@ -73,8 +79,23 @@ public class QueueO {
 	 * @return first value in the array
 	 */
 	public int front() {
-		if ( this.array == null || this.n <= 0 ) return -1;
-		return this.array[0];
+		if ( f == b) return -1;
+		return this.array[f];
+	}
+	
+	
+	/**
+	 * Returns and removes value from the beginning of the queue
+	 * @return first value from the queue
+	 */
+	public int dequeue() {
+		if ( f == b ) return -1;
+		
+		int temp = this.array[f];
+		
+		if ( f < QMAX -1 ) f++;
+		else f = 0;
+		return temp;
 	}
 	
 	
@@ -84,11 +105,11 @@ public class QueueO {
 	 */
 	@Override
 	public String toString() {
-		if ( this.n == 0 || this.array.length < 0 ) return "[ ]";
+		if ( f == b) return "[ ]";
 		String text = "[";
-		for (int i = 0; i < this.n; i++) {
+		for (int i = f; i < b; i++) {
 			text += this.array[i];
-			if ( i == n-1 ) return text += "]";
+			if ( i == b-1 ) return text += "]";
 			text += ", ";
 		}
 		return text;
@@ -104,26 +125,36 @@ public class QueueO {
 	 */
 	public static void main(String[] args) {
 		Array array = new Array();
-		System.out.println("Array: " + array.toString());
+		System.out.println("Array in the beginning: " + array.toString());
 		
 		// isEmpty
 		System.out.println("Is the array empty? Answer: " + array.isEmpty());
 		
 		// enqueue (add to end of queue)
-		array.enqueue(1); array.enqueue(2);	array.enqueue(3);
+		array.enqueue(1);
+		System.out.println(array.toString());
+		array.enqueue(2);
+		System.out.println(array.toString());
+		array.enqueue(3);
+		System.out.println(array.toString());
+		array.enqueue(4);
+		System.out.println("Queue after enqueues: " + array.toString());
 		
 		// front
 		int firstValue = 0;
 		firstValue = array.front();
-		System.out.print("First value in the array: " + firstValue);
+		System.out.println("First value in the queue: " + firstValue);
 		
 		// TODO dequeue (remove beginning, return value)
 		int delVal = 0;
-		// delVal= array.dequeue();
-		System.out.println("Following value was deleted from the beginnig: " + delVal);
+		delVal= array.dequeue();
+		System.out.println("Dequeue deleted value from the queue: " + delVal);
+		System.out.println("Queue after dequeue: " + array.toString());
 		
 		// size
 		System.out.println("Size of the array: " + array.size());
+		firstValue = array.front();
+		System.out.println("First value in the queue: " + firstValue);
 	}
 
 }
