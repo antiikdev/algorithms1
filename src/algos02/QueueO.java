@@ -5,7 +5,6 @@
  */
 package algos02;
 
-import java.util.Arrays;
 
 /**
  * @author AntiikDev
@@ -27,22 +26,30 @@ public class QueueO {
 		private int[] array;
 		
 // -------- Array and queue functions --------
-		/**
-		 * Initialize Array
-		 */
-		public Array() {
-			this.array = new int[QMAX];
-		}
-		
-		
-		/**
-		 * Initialize Array
-		 * @param size of the array
-		 */
-		public Array(int size) {
-			this.array = new int[size];
-			this.QMAX = size;
-		}
+	/**
+	 * Initialize Array
+	 */
+	public Array() {
+		this.array = new int[QMAX];
+	}
+	
+	
+	/**
+	 * Initialize Array
+	 * @param size of the array
+	 */
+	public Array(int size) {
+		this.array = new int[size];
+		this.QMAX = size;
+	}
+	
+	
+	/**
+	 * @return array's length
+	 */
+	public int length() {
+		return this.array.length;
+	}
 
 	
 	/**
@@ -74,8 +81,12 @@ public class QueueO {
 	 */
 	public void enqueue(int value) {
 		if ( (f==0 && b >= QMAX-1) || (f>0 && f-b==1) ) return;
-		if ( b < QMAX-1) this.array[b++] = value;
-		else b = 0;
+		if ( b < QMAX-1) {
+			this.array[b++] = value;
+		} else {
+			b = 0;
+			this.array[b] = value;
+		}
 	}
 	
 	
@@ -121,7 +132,7 @@ public class QueueO {
 		}
 		
 		if (f > 0 && b == 0) {
-			for(int y = 0; y < b; y++) {
+			for(int y = 0; y <= b; y++) {
 				if (this.array[y] != 0) {
 					text += this.array[y];
 					// if ( y == b-1 ) return text += "]";
@@ -142,9 +153,12 @@ public class QueueO {
 	public static void main(String[] args) {
 		Array array = new Array();
 		System.out.println("Array in the beginning: " + array.toString());
+		System.out.println("Array's total length: " + array.length());
 		
 		// isEmpty
-		System.out.println("Is the array empty? Answer: " + array.isEmpty());
+		System.out.println("Is the array really empty?");
+		System.out.println("Answer: "+ array.isEmpty() + ", as size: " + array.size());
+		System.out.println();
 		
 		// enqueue (add to end of queue)
 		System.out.println("Enqueues: ");
@@ -162,7 +176,7 @@ public class QueueO {
 		firstValue = array.front();
 		System.out.println("First value in the queue: " + firstValue);
 		
-		// TODO dequeue (remove beginning, return value)
+		// dequeue (remove beginning, return value)
 		int delVal = 0;
 		delVal= array.dequeue();
 		System.out.println("Dequeue deleted value from the queue: " + delVal);
