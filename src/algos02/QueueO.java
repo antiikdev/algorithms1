@@ -5,6 +5,8 @@
  */
 package algos02;
 
+import java.util.Arrays;
+
 /**
  * @author AntiikDev
  * @version 2 Feb 2022
@@ -19,7 +21,7 @@ public class QueueO {
 	 */
 	static class Array {
 		
-		private int QMAX = 10; // Max. number of values
+		private int QMAX = 6; // Max. number of values
 		private int f = 0; // first value index
 		private int b = 0; // index before the last value
 		private int[] array;
@@ -44,7 +46,7 @@ public class QueueO {
 
 	
 	/**
-	 * Tests if an array is empty
+	 * Tests if queue is empty
 	 * @return true if empty, false if not
 	 */
 	public boolean isEmpty() {
@@ -54,11 +56,15 @@ public class QueueO {
 	
 	
 	/**
-	 * Size of an array stack
+	 * Size of a queue
 	 * @return number of values in an array
 	 */
 	public int size() {
-		return this.array.length;
+		int size = 0;
+		for (int i = f; i < b; i++) {
+			size++;
+		}
+		return size;
 	}
 	
 	
@@ -67,11 +73,9 @@ public class QueueO {
 	 * @param value that is added
 	 */
 	public void enqueue(int value) {
-		if ( this.b >= this.QMAX-1 ) return;
-		if ( b < QMAX-1) {
-			this.array[b++] = value;
-		} else b = 0;
-		
+		if ( (f==0 && b >= QMAX-1) || (f>0 && f-b==1) ) return;
+		if ( b < QMAX-1) this.array[b++] = value;
+		else b = 0;
 	}
 	
 	
@@ -101,21 +105,33 @@ public class QueueO {
 	
 	/**
 	 * Prints array as a string
-	 * @return 
+	 * @return string
 	 */
 	@Override
 	public String toString() {
-		if ( f == b) return "[ ]";
-		String text = "[";
-		for (int i = f; i < b; i++) {
-			text += this.array[i];
-			if ( i == b-1 ) return text += "]";
-			text += ", ";
+		if ( f == b) return "Empty";
+		String text = "";
+		
+		for(int i = f; i < this.array.length; i++) {
+			if (this.array[i] != 0) {
+				text += this.array[i];
+				// if ( i == b-1 ) return text += "]";
+				text += " ";
+			}
+		}
+		
+		if (f > 0 && b == 0) {
+			for(int y = 0; y < b; y++) {
+				if (this.array[y] != 0) {
+					text += this.array[y];
+					// if ( y == b-1 ) return text += "]";
+					text += " ";
+				}	
+			}
 		}
 		return text;
 	}
 }
-	
 // -----------------------------------------------------------------------		
 
 	
@@ -131,6 +147,7 @@ public class QueueO {
 		System.out.println("Is the array empty? Answer: " + array.isEmpty());
 		
 		// enqueue (add to end of queue)
+		System.out.println("Enqueues: ");
 		array.enqueue(1);
 		System.out.println(array.toString());
 		array.enqueue(2);
@@ -138,7 +155,7 @@ public class QueueO {
 		array.enqueue(3);
 		System.out.println(array.toString());
 		array.enqueue(4);
-		System.out.println("Queue after enqueues: " + array.toString());
+		System.out.println(array.toString());
 		
 		// front
 		int firstValue = 0;
@@ -155,6 +172,15 @@ public class QueueO {
 		System.out.println("Size of the array: " + array.size());
 		firstValue = array.front();
 		System.out.println("First value in the queue: " + firstValue);
+		
+		
+		// enqueue (add to end of queue)
+		System.out.println();
+		System.out.println("More enqueues: ");
+		array.enqueue(5);
+		System.out.println(array.toString());
+		array.enqueue(6);
+		System.out.println(array.toString());
 	}
 
 }
