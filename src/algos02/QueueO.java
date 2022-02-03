@@ -131,13 +131,13 @@ public class QueueO {
 			}
 		}
 		
-		if (f > 0 && b == 0) {
+		if (f > 0 && b < f) {
 			for(int y = 0; y <= b; y++) {
 				if (this.array[y] != 0) {
 					text += this.array[y];
 					// if ( y == b-1 ) return text += "]";
 					text += " ";
-				}	
+				}
 			}
 		}
 		return text;
