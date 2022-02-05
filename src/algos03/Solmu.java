@@ -71,6 +71,15 @@ public class Solmu {
 	}
 	
 	
+	
+	public static void printNode(Solmu solmu) {
+		if (solmu  == null) return;
+		if (solmu.left == null && solmu.right == null) System.out.print(solmu.key);
+		printNode(solmu.left);
+		printNode(solmu.right);
+	}
+	
+	
 	/**
 	 * Main for testing
 	 * @param args not in use
@@ -91,8 +100,18 @@ public class Solmu {
 		Solmu h = new Solmu(array[0]);
 		
 		char[] keyValues = new char[10];
-		// keyValues = esijarjestys();
-		System.out.println(Arrays.toString(keyValues));
+		
+		// TODO: preorder (Finn. esijarjestys): 1. node, 2. right, 3 left
+		printNode(h);
+		
+		// TODO: inorder (Finn. sisajarjestys): 1. left, 2 node, 3. right
+		// keyValues = sisajarjestys(); 
+		// System.out.println(Arrays.toString(keyValues));
+		
+		// TODO: postorder (Finn. jalkijarjestys): 1. left, 2 right 3. node
+		// keyValues = jalkijarjestys(); 
+		// System.out.println(Arrays.toString(keyValues));
+		
 	}
 
 }
