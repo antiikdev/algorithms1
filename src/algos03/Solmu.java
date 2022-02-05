@@ -9,9 +9,9 @@
  * 		   -
  *  	  b
  */
+
 package algos03;
 
-import java.util.Arrays;
 
 /**
  * @author AntiikDev
@@ -22,7 +22,22 @@ public class Solmu {
 	public char key;
 	public Solmu left;
 	public Solmu right;
+	
+					  //     0   1   2   3   4   5   6   7   8   9
+	static char[] array = { 'h','c','j','a','e','l','d','f','k','b'};
 
+	// Nodes (Finn. solmut)
+	static Solmu b = new Solmu(array[9]);
+	static Solmu k = new Solmu(array[8]);
+	static Solmu f = new Solmu(array[7]);
+	static Solmu d = new Solmu(array[6],b,null); // d.addLeft(b);
+	static Solmu e = new Solmu(array[4],d,f);
+	static Solmu a = new Solmu(array[3]);
+	static Solmu l = new Solmu(array[5],k,null); // l.addLeft(k);
+	static Solmu j = new Solmu(array[2],null,l); // j.addRight(l);
+	static Solmu c = new Solmu(array[1],a,e);
+	static Solmu h = new Solmu(array[0],c,j);
+	
 	
 	/**
 	 * Initialize empty Solmu (binary tree's node)
@@ -50,33 +65,42 @@ public class Solmu {
 		this.key = value;
 		this.left = l;
 		this.right = r;
+	}	
+	
+	
+	/**
+	 * Preorder (Finn. esijarjestys) 1. node, 2. right, 3 left
+	 * Prints binary tree node (Finn. solmu)
+	 * @param solmu printed
+	 */
+	public static void esijarjestys(Solmu solmu) {
+		System.out.print(solmu.key);
+		if (solmu.left != null) esijarjestys(solmu.left);
+		if (solmu.right != null) esijarjestys(solmu.right);
 	}
 	
 	
 	/**
-	 * Adds left node (solmu)
-	 * @param l left node
+	 * Inorder (Finn. sisajarjestys) 1. left, 2 node, 3. right
+	 * Prints binary tree node (Finn. solmu)
+	 * @param solmu printed
 	 */
-	public void addLeft(Solmu l) {
-		this.left = l;
+	public static void sisajarjestys(Solmu solmu) {
+		if (solmu.left != null) sisajarjestys(solmu.left);
+		System.out.print(solmu.key);
+		if (solmu.right != null) sisajarjestys(solmu.right);
 	}
 	
 	
 	/**
-	 * Adds right node (solmu)
-	 * @param r right node
+	 * Postorder (Finn. jalkijarjestys): 1. left, 2 right 3. node
+	 * Prints binary tree node (Finn. solmu)
+	 * @param solmu printed
 	 */
-	public void addRight(Solmu r) {
-		this.right = r;
-	}
-	
-	
-	
-	public static void printNode(Solmu solmu) {
-		if (solmu  == null) return;
-		if (solmu.left == null && solmu.right == null) System.out.print(solmu.key);
-		printNode(solmu.left);
-		printNode(solmu.right);
+	public static void jalkijarjestys(Solmu solmu) {
+		if (solmu.left != null) jalkijarjestys(solmu.left);
+		if (solmu.right != null) jalkijarjestys(solmu.right);
+		System.out.print(solmu.key);
 	}
 	
 	
@@ -85,33 +109,21 @@ public class Solmu {
 	 * @param args not in use
 	 */
 	public static void main(String[] args) {
-		//				  0   1   2   3   4   5   6   7   8   9
-		char[] array = { 'h','c','j','a','e','l','d','f','k','b'};
-		// Add nodes (Finn. solmut)
-		Solmu b = new Solmu(array[9]);
-		Solmu k = new Solmu(array[8]);
-		Solmu f = new Solmu(array[7]);
-		Solmu d = new Solmu(array[6]); d.addLeft(b);
-		Solmu e = new Solmu(array[4],d,f);
-		Solmu a = new Solmu(array[3]);
-		Solmu l = new Solmu(array[8]); l.addLeft(k);
-		Solmu j = new Solmu(array[2]); j.addRight(l);
-		Solmu c = new Solmu(array[1],a,e);
-		Solmu h = new Solmu(array[0]);
 		
-		char[] keyValues = new char[10];
+		// Preorder (Finn. esijarjestys): 1. node, 2. right, 3 left
+		System.out.print("Preorder (Finn. esijarjestys): ");
+		esijarjestys(h);
+		System.out.println();
 		
-		// TODO: preorder (Finn. esijarjestys): 1. node, 2. right, 3 left
-		printNode(h);
+		// Inorder (Finn. sisajarjestys): 1. left, 2 node, 3. right
+		System.out.print("Inorder (Finn. sisajarjestys): ");
+		sisajarjestys(h);
+		System.out.println();
 		
-		// TODO: inorder (Finn. sisajarjestys): 1. left, 2 node, 3. right
-		// keyValues = sisajarjestys(); 
-		// System.out.println(Arrays.toString(keyValues));
-		
-		// TODO: postorder (Finn. jalkijarjestys): 1. left, 2 right 3. node
-		// keyValues = jalkijarjestys(); 
-		// System.out.println(Arrays.toString(keyValues));
-		
+		// Postorder (Finn. jalkijarjestys): 1. left, 2 right 3. node
+		System.out.print("Postorder (Fi jalkijarjestys): ");
+		jalkijarjestys(h);
+		System.out.println();
 	}
 
 }
