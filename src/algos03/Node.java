@@ -24,7 +24,7 @@ public class Node {
 	static Node fourty = new Node(array[6]);
 	static Node thirtytwo = new Node(array[5], thirtyone, thirtythree);
 	static Node twentythree = new Node(array[4]);
-	static Node fifteen = new Node(array[3], null, twentythree);
+	static Node fifteen = new Node(array[3], null, sixteen);
 	static Node thirtyseven = new Node(array[2], thirtytwo, fourty);
 	static Node twenty = new Node(array[1], fifteen, twentythree);
 	static Node thirty = new Node(array[0], twenty, thirtyseven);
