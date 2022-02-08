@@ -34,8 +34,8 @@ public class BinaryTreeD1 {
 	/**
 	 * Height of the binary tree, i.e. longest path from root node
 	 * to any leaf node in the tree
-	 * @param solmu
-	 * @return
+	 * @param solmu Node searched
+	 * @return longest path of the binary tree
 	 */
 	public static int binaryTreeHeight(Solmu solmu) {
 		int vasen=0, oikea=0;

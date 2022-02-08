@@ -1,6 +1,11 @@
 /**
  * Binary tree nodes (Finn. solmut) in a) orders
  * as well as a) and b) search with variable pointers
+ *                        30
+ *           20                    37
+ *       15     23             32      40
+ *         16                31  33
+ * 
  */
 package algos03;
 
@@ -123,6 +128,33 @@ public class Node {
 		return false;
 	}
 	
+	
+	/**
+	 * Searches longest distance between the binary tree integer key values
+	 * <example>
+	 * distance(p,q)=|p.key-q.key| = 31-24 = 7
+	 * </example>
+	 * @param solmu node searched
+	 * @return longest distance between the binary tree integer key values
+	 */
+	public static int distance(Node solmu) {
+		int left=0, right=0;
+		if (solmu == null) return 0;
+		
+		if (solmu.left != null) {
+			left += solmu.key - solmu.left.key;
+			left += distance(solmu.left);
+		}
+		
+		if (solmu.right != null) {
+			right += solmu.right.key - solmu.key;
+			right += distance(solmu.right);
+		}
+		
+		if ( left > right ) return left;
+		else return right;
+	}
+	
 
 	/**
 	 * Main for testing
@@ -156,6 +188,12 @@ public class Node {
 		h = 24;
 		searchResult = searchVariable(h, thirty);
 		System.out.println(searchResult);
+		
+		// ------------ Search longest integer value distance -------------
+		System.out.println("------ Search longest integer value distance ------");
+		int result = 0;
+		result = distance(thirty);
+		System.out.println(result);
 		
 	}
 
