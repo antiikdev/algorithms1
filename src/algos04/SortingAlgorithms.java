@@ -41,7 +41,7 @@ public class SortingAlgorithms {
 		for (int i = 1; i < array.length; i++) {
 			int p = array[i];
 			int j = i-1;
-			while (j >= 0 && array[i] > p) {
+			while (j >= 0 && array[j] > p) {
 				array[j+1] = array[j];
 				j = j-1;
 			}
@@ -64,7 +64,7 @@ public class SortingAlgorithms {
 		array = BubbleSort(array);
 		System.out.println("Bubble sort:  " + Arrays.toString(array));
 		
-		// TODO: Insertion sort
+		// Insertion sort
 		System.out.println("------");
 		int[] array2 = null;
 		array2 = algos01.RandomArrayO1.addRandomNumbers(array2, 1, 10);
