@@ -94,19 +94,19 @@ public class SortingAlgorithms {
 	 * @return sorted  String
 	 */
 	public static String insertionSort(String array) {
-		/* TODO
-		for (int i = 1; i < array.length; i++) {
-			int p = array[i];
+		char[] ca = stringToChar(array);
+		
+		for (int i = 1; i < ca.length; i++) {
+			char p = ca[i];
 			int j = i-1;
-			while (j >= 0 && array[j] > p) {
-				array[j+1] = array[j];
+			while (j >= 0 && ca[j] > p) {
+				ca[j+1] = ca[j];
 				j = j-1;
 			}
-			array[j+1] = p;
+			ca[j+1] = p;
 		}
-		return array;
-		*/
-		return "";
+		String result = String.valueOf(ca);
+		return result;
 	}
 	
 
@@ -134,9 +134,16 @@ public class SortingAlgorithms {
 		// Bubble sort - char array
 		String line = "REKURSIO";
 		System.out.println("------");
-		System.out.println("Original String: " + line);
+		System.out.println("Original String:      " + line);
 		line = bubbleSort(line);
-		System.out.println("String sorted:   " + line);
+		System.out.println("String bubble sorted: " + line);
+		
+		// Bubble sort - char array
+		line = "REKURSIO";
+		System.out.println("------");
+		System.out.println("Original String:         " + line);
+		line = insertionSort(line);
+		System.out.println("String insertion sorted: " + line);
 	}
 
 }
