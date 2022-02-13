@@ -109,6 +109,36 @@ public class SortingAlgorithms {
 		return result;
 	}
 	
+	
+	/**
+	 * Selection sort in alphabetic order with String (chars)
+	 * @param array of String (char)
+	 * @return String that is sorted
+	 */
+    public static String selectionSort(String array)
+    {
+    	char[] ca = stringToChar(array);
+        int n = ca.length;
+  
+        // One by one move boundary of unsorted subarray
+        for (int i = 0; i < n-1; i++)
+        {
+            // Find the minimum element in unsorted array
+            int min_idx = i;
+            for (int j = i+1; j < n; j++)
+                if (ca[j] < ca[min_idx])
+                    min_idx = j;
+  
+            // Swap the found minimum element with the first
+            // element
+            char temp = ca[min_idx];
+            ca[min_idx] = ca[i];
+            ca[i] = temp;
+        }
+		String result = String.valueOf(ca);
+		return result;
+    }
+	
 
 	/**
 	 * Main for testing
@@ -131,19 +161,27 @@ public class SortingAlgorithms {
 		array2 = insertionSort(array2);
 		System.out.println("Insertion sort: " + Arrays.toString(array2));
 		
-		// Bubble sort - char array
+		// Bubble sort - String (char)
 		String line = "REKURSIO";
 		System.out.println("------");
 		System.out.println("Original String:      " + line);
 		line = bubbleSort(line);
 		System.out.println("String bubble sorted: " + line);
 		
-		// Bubble sort - char array
+		// Bubble sort - String (char)
 		line = "REKURSIO";
 		System.out.println("------");
 		System.out.println("Original String:         " + line);
 		line = insertionSort(line);
 		System.out.println("String insertion sorted: " + line);
+		
+		// Selection sort - String (char)
+		line = "REKURSIO";
+		System.out.println("------");
+		System.out.println("Original String:         " + line);
+		line = insertionSort(line);
+		System.out.println("String selection sorted: " + line);
+		
 	}
 
 }
