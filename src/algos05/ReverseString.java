@@ -34,9 +34,12 @@ public class ReverseString {
 			yksiSana[i] = kirjain;
 			if ( kirjain == ' ' ) {
 				String sana = String.valueOf(yksiSana);
+				sana = trim(sana); // Trim the word
 				System.out.println(sana); // TEST REMOVE
 				jonotaulu[j] = sana;
+				yksiSana = new char[jono.length()];
 				j++;
+				
 			}
 			i++;
 		}
@@ -52,6 +55,30 @@ public class ReverseString {
 		
 		
 		return jono;
+	}
+	
+	
+	/**
+	 * Trims a word by removing empty spaces
+	 * @param jono that is trimmed
+	 * @return trimmed String
+	 */
+	public static String trim(String jono) {
+		if (jono.length() < 0) return jono;
+		char[] charArray = stringToChar(jono);
+		char[] newArray = new char[jono.length()];
+		
+		// TODO: index of ' ' empty spaces
+		
+		for (int i = 0; i < charArray.length; i++) {
+			if ( charArray[i] != ' ' ) {
+				newArray[i] = charArray[i];
+				if ( charArray[i+1] == ' ' || i > charArray.length ) break;
+			}
+		}
+		String sana = String.valueOf(newArray);
+		System.out.println(sana); // TEST REMOVE
+		return sana;
 	}
 	
 	
