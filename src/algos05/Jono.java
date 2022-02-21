@@ -11,6 +11,38 @@ public class Jono {
 
 	
 	/**
+	 * Counts number of letter groups in a String
+	 * @param s String where letters counted
+	 * @return number of letter groups int
+	 * @example
+	 * <pre name="test">
+	 *  String p = "a";
+	 * 	countGroupsOfLetters(p) === 1;
+	 * 	String s = "abba";
+	 * 	countGroupsOfLetters(s) === 3;
+	 *  String m = "aakkaacccpp";
+	 *  countGroupsOfLetters(m) === 5;
+	 * </pre>
+	 */
+	public static int countGroupsOfLetters(String s) {
+		if (s.length() < 0) return 0;
+		if (s.length() == 1) return 1;
+		
+		int number = 1;
+		char[] ca = stringToChar(s);
+		char previous = ca[0];
+		
+		for (int i = 1; i < ca.length; i++) {
+			if (previous != ca[i]) {
+				number++;
+			}
+			previous = ca[i];
+		}
+		return number;
+	}
+	
+	
+	/**
 	 * Counts number of char letters in a String
 	 * @param m String 
 	 * @param letter counted
@@ -46,10 +78,16 @@ public class Jono {
 	 * @param args not in use
 	 */
 	public static void main(String[] args) {
+		// How many a letters
 		String m = "aataminomena";
 		char letter = 'a';
 		int kirjaimet = countLetters(m, letter);
 		System.out.println("String '"+m+"' has "+kirjaimet+" '"+letter+"' letters.");
+		
+		// How many groups of letters
+		String m2 = "aabcccaa";
+		int tulos = countGroupsOfLetters(m2);
+		System.out.println("String '"+m2+"' has "+tulos+" groups of letters.");
 	}
 
 }
