@@ -100,7 +100,6 @@ public class Quicksort {
 			}
 			ca[j+1] = p;
 		}
-		String result = String.valueOf(ca);
 	}
 	
 	

@@ -48,7 +48,8 @@ public class Counting_sort {
 			u[i] = u[i] + u[i-1];
 		}
 			// u[i] includes information on how many smaller or bigger
-			// (u[i] sisaltaa tiedon montako alkiota pienempia tai yhtasuuria kuin i)
+			// (u[i] sisaltaa tiedon montako alkiota pienempia tai
+			// yhtasuuria kuin i)
 		for (int j = n -1; j >= 0; j--) {
 			s[u[t[j]] - 1] = t[j]; // variable t[j] in place (paikalleen)
 			u[t[j]]--; // update count (lukumaaran paivitys)
@@ -56,7 +57,8 @@ public class Counting_sort {
 		for (int i = 0; i < n; i++) {
 			t[i] = u[i];
 		}
-		// copy sorted to original array (kopioidaan sortatut alkuperaiseen taulukkoon)
+		// copy sorted to original array (kopioidaan sortatut
+		// alkuperaiseen taulukkoon)
 	}
 	
 
