@@ -1,6 +1,5 @@
 /**
- * Sorting algorighmts for alphabetical order:
- * Merge sort and 
+ * Merge sort algorithm for alphabetical order
  */
 package algos05;
 
@@ -8,7 +7,7 @@ package algos05;
  * @author AntiikDev
  * @version 20 Feb 2022
  */
-public class Sort {
+public class Merge_sort {
 	
 	
 	/**
