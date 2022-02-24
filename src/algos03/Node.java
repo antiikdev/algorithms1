@@ -10,7 +10,7 @@
 package algos03;
 
 /**
- * @author AntiikDev
+ * @author Antiik.dev
  * @ver 6 Feb 2022
  */
 public class Node {

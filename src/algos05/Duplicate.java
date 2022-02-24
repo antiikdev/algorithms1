@@ -40,8 +40,11 @@ public class Duplicate {
 	
 	
 	/**
-	 * Rrecursive method to search duplicates from ascending order int array
+	 * Recursive method to search duplicates from ascending order int array
 	 * @param a array with ascending order integer numbers
+	 * @param value currently being compared
+	 * @param currentValueIndex is index of the current value variable
+	 * @param nextIndex that is being studied
 	 */
 	public static void recursiveAscendingDuplicates(int[] a, int value, int currentValueIndex, int nextIndex) {
 		if ( a.length <= 0 ) return;
@@ -74,6 +77,9 @@ public class Duplicate {
 	/**
 	 * Recursive method to find duplicates from a random int array
 	 * @param a array with random integer numbers
+	 * @param value currently being compared
+	 * @param currentValueIndex is index of the current value variable
+	 * @param nextIndex that is being studied
 	 */
 	public static void recursiveRandomDuplicates(int[] a, int value, int currentValueIndex, int nextIndex) {
 		if ( a.length <= 0 ) return;

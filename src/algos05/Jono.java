@@ -4,7 +4,7 @@
 package algos05;
 
 /**
- * @author AntiikDev
+ * @author Antiik.dev
  * @version 21 Feb 2022
  */
 public class Jono {
