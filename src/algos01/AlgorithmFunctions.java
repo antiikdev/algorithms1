@@ -44,14 +44,14 @@ public class AlgorithmFunctions {
 	 * @param array with positive integers
 	 * @return number of zeroed indexes in an array
 	 */
-	public static int zeroDoubleNumbers(int[] array) {
-		if ( array.length <= 0) return 0;
-		int zeroes = 0;
-		int temp = array[0];
+	public static int zeroDoubleNumbers(int[] array) {	// Time
+		if ( array.length <= 0) return 0;				// vakio
+		int zeroes = 0;									// vakio
+		int temp = array[0];							// vakio
 		
-		for ( int i = 1; i < array.length; i++ ) {
-			if ( array[i] == temp) {
-				array[i] = 0;
+		for ( int i = 1; i < array.length; i++ ) {		// loop n-1
+			if ( array[i] == temp) {					// everytime
+				array[i] = 0;							// if needed
 				zeroes++;
 			}
 			else temp = array[i];
