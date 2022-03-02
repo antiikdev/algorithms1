@@ -26,8 +26,8 @@ public class AlgorithmFunctions {
 	 * @return difference between biggest and smallest numbers
 	 */
 	public static int findMaxMinDifference(int[] array) {
-		int smallest = Integer.MAX_VALUE;
-		int biggest = -Integer.MIN_VALUE;
+		int smallest = array[0];
+		int biggest = array[0];
 		
 		for (int i = 0; i < array.length; i++) {
 			if ( array[i] < smallest ) smallest = array[i];
