@@ -7,7 +7,7 @@ package algos01;
 import java.util.Arrays;
 
 /**
- * @author Antiikdev
+ * @author Antiik.dev
  * @version 21 Jan 2022
  *
  */

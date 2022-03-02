@@ -8,7 +8,7 @@ import java.util.Random;
 
 /**
  * Random integer table numbers
- * @author Antiikdev
+ * @author Antiik.dev
  * @version 20. Jan 2022
  */
 public class RandomArrayO1 {
