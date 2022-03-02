@@ -45,7 +45,7 @@ public class AlgorithmFunctions {
 	 * @return number of zeroed indexes in an array
 	 */
 	public static int zeroDoubleNumbers(int[] array) {
-		if ( array.length < 0) return 0;
+		if ( array.length <= 0) return 0;
 		int zeroes = 0;
 		int temp = array[0];
 		
@@ -54,7 +54,7 @@ public class AlgorithmFunctions {
 				array[i] = 0;
 				zeroes++;
 			}
-			temp = array[i];
+			else temp = array[i];
 		}
 		return zeroes;
 	}
