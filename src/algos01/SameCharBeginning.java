@@ -24,17 +24,14 @@ public class SameCharBeginning {
 	 * </pre>
 	 */
 	public static int sameChars(String jono) {
-		if (jono.length() <= 0) return 0;
+		if (jono.length() <= 0) return 0; // check if empty
 		
 		char[] ca = jono.toCharArray();
 		char c = jono.charAt(0);
-		int kpl = 0; // how many chars counted
+		int kpl = 1; // how many chars counted, at least 1
 		
 		for (int i = 1; i < ca.length; i++) {
-		    if ( c == ca[i] ) {
-		    	if (kpl == 0) kpl++;
-		    	kpl++;
-		    }
+		    if ( c == ca[i] ) kpl++;
 		    if ( c != ca[i] ) break;
 		}
 		return kpl;
