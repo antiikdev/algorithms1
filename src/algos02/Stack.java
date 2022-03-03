@@ -6,7 +6,7 @@ package algos02;
 
 
 /**
- * @author AntiikDev
+ * @author Antiik.Dev
  * @version 28 Jan 2022
  */
 public class Stack {
@@ -15,7 +15,7 @@ public class Stack {
 // ------------------------- ARRAY CLASS --------------------------------
 	/**
 	 * Dynamic array class
-	 * @author AntiikDev
+	 * @author Antiik.Dev
 	 * NOTE: STATIC class Array, since inner class of an class Stack
 	 */
 	static class Array {
@@ -117,7 +117,7 @@ public class Stack {
 		
 		/**
 		 * Prints array as a string
-		 * @return 
+		 * @return String
 		 */
 		@Override
 		public String toString() {

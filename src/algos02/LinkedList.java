@@ -135,8 +135,12 @@ public class LinkedList {
 	 * Changes place of first and last nodes of the list
 	 * @param list what is changed
 	 * @return list where first and last values have been changed
+	 * NOTE: Only data changed
 	 */
 	public static LinkedList changeFirstLast(LinkedList list) {
+		if (list.first == null) return list; // empty list
+		if (list.first.next == null) return list; // only one node
+		
 		int firstData = list.first.getData();
 		int lastData = list.last.getData();
 		
@@ -160,10 +164,12 @@ public class LinkedList {
 		list = insert(list, 5);
 		printList(list);
 		
+		// Adds last pointer
 		System.out.println("Size of the list: " + list.size(list));
 		insertLastPointer(list);
 		System.out.println("Last value in the list: " + list.last.getData());
 		
+		// Change first and last 
 		System.out.print("LinkedList after first and last values changed: ");
 		changeFirstLast(list);
 		printList(list);
