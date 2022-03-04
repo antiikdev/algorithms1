@@ -16,7 +16,7 @@ public class BinaryTreeD1 {
 					F
 	 		C				G
 	     A    D				  I
-	 		 B E			 H J
+	 	   B	 E			 H J
 	 						  
 	 */
 	static Solmu B = new Solmu(arrayA[9]);
