@@ -20,22 +20,22 @@ public class AlgorithmFunctions {
 	 * Algorithm processing time based on array size:
 	 * Processing time is linear as each of the array indexes
 	 * are searched for min and max:
-	 * T(n) = n * t1 + t2
+	 * T(n) = n * t1 + t2 = O(n)
 	 * </Evaluation>
 	 * @param array where random integer numbers
 	 * @return difference between biggest and smallest numbers
-	 */
-	public static int findMaxMinDifference(int[] array) {
-		int smallest = array[0];
-		int biggest = array[0];
+	 */														// time complexity/
+	public static int findMaxMinDifference(int[] array) {	// suoritusaika:
+		int smallest = array[0];							// vakio
+		int biggest = array[0];								// vakio
 		
-		for (int i = 0; i < array.length; i++) {
-			if ( array[i] < smallest ) smallest = array[i];
-			if ( array[i] > biggest ) biggest = array[i];
+		for (int i = 1; i < array.length; i++) {			// loop n-1
+			if ( array[i] < smallest ) smallest = array[i];	// (aina) tarvittaessa
+			if ( array[i] > biggest ) biggest = array[i];	// (aina) tarvittaessa
 		}
 		System.out.println("Biggest number: " + biggest);
 		System.out.println("Smallest number: " + smallest);
-		return biggest - smallest;
+		return biggest - smallest;							// vakio
 	}
 	
 	
@@ -43,10 +43,14 @@ public class AlgorithmFunctions {
 	 * Zeroes or dublicate numbers in an array
 	 * @param array with positive integers
 	 * @return number of zeroed indexes in an array
+	 * <Evaluatio>
+	 * T(n) = n * t1 + T2 = O(n)
+	 * Linear
+	 * </Evaluation>
 	 */
-	public static int zeroDoubleNumbers(int[] array) {	// Time
+	public static int zeroDoubleNumbers(int[] array) {	// Suoritusaika:
 		if ( array.length <= 0) return 0;				// vakio
-		int zeroes = 0;									// vakio
+		int zeroes = 0;	// count amount of zeroes 			// vakio
 		int temp = array[0];							// vakio
 		
 		for ( int i = 1; i < array.length; i++ ) {		// loop n-1
@@ -54,7 +58,7 @@ public class AlgorithmFunctions {
 				array[i] = 0;							// if needed
 				zeroes++;
 			}
-			else temp = array[i];
+			else temp = array[i];						// if needed
 		}
 		return zeroes;
 	}

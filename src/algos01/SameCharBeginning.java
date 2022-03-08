@@ -32,7 +32,7 @@ public class SameCharBeginning {
 		
 		for (int i = 1; i < ca.length; i++) {
 		    if ( c == ca[i] ) kpl++;
-		    if ( c != ca[i] ) break;
+		    else break; // break if not same anymore
 		}
 		return kpl;
 	}
