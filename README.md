@@ -1,5 +1,7 @@
 # Algoritmit (Eng. algorithms)
 
+Lähde (source): Jyu, ITKA201
+
 ## Aiheet per paketti (topics per packet):
 
 - Yleiset ja osittavat algoritmit: mm. etsintä (algos01, algos05)
